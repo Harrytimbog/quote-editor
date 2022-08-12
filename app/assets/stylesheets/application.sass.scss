@@ -4,6 +4,7 @@
 @import "mixins/media";
 
 // Configuration
+@import "config/animations";
 @import "config/variables";
 @import "config/reset";
 
@@ -14,10 +15,11 @@
 @import "components/visually_hidden";
 @import "components/quote";
 @import "components/turbo_progress_bar";
+@import "components/navbar";
+@import "components/flash";
 
 // Layouts
 @import "layouts/container";
 @import "layouts/header";
 
 
-@import "components/navbar";
