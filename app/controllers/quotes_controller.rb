@@ -4,17 +4,18 @@ class QuotesController < ApplicationController
     def index
       @quotes = current_company.quotes.ordered
     end
-  
+
     def show
+      @line_item_dates = @quote.line_item_dates.ordered
     end
-  
+
     def new
       @quote = Quote.new
     end
-  
+
     def create
       @quote = current_company.quotes.build(quote_params)
-    
+
       if @quote.save
         respond_to do |format|
           format.html { redirect_to quotes_path, notice: "Quote was successfully created." }
@@ -24,10 +25,10 @@ class QuotesController < ApplicationController
         render :new, status: :unprocessable_entity
       end
     end
-  
+
     def edit
     end
-  
+
     def update
       if @quote.update(quote_params)
         respond_to do |format|
